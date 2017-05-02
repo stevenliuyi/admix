@@ -11,7 +11,8 @@ def models():
             'weac2',
             'K36',
             'EUtest13',
-            'Jtest14']
+            'Jtest14',
+            'HarappaWorld']
 
 # population names for all models
 def populations(model):
@@ -175,6 +176,23 @@ def populations(model):
                 ('East Asian','东亚'),
                 ('Siberian','西伯利亚'),
                 ('West African','西非')]
+    elif model == 'HarappaWorld':
+        return [('South-Indian','南印度'),
+                ('Baloch','俾路支人'),
+                ('Caucasian','高加索人'),
+                ('Northeast-Euro','东北欧'),
+                ('Southeast-Asian','东南亚'),
+                ('Siberian','西伯利亚'),
+                ('Northeast-Asian','东北亚'),
+                ('Papuan','巴布亚人'),
+                ('American','美洲原住民'),
+                ('Beringian','白令陆桥'),
+                ('Mediterranean','地中海'),
+                ('Southwest-Asian','西南亚'),
+                ('San','桑人'),
+                ('East-African','东非'),
+                ('Pygmy','俾格米人'),
+                ('West-African','西非')]
     else:
         print('Model does not exist!')
         return None
