@@ -1,3 +1,15 @@
+# all models
+def models():
+    return ['K7b',
+            'K12b',
+            'E11',
+            'globe13',
+            'globe10',
+            'world9',
+            'Eurasia7',
+            'Africa9',
+            'weac2']
+
 # population names for all models
 def populations(model):
     if model == 'K7b':
