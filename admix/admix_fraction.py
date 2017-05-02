@@ -6,6 +6,14 @@ from raw_data_processing import read_raw_data, read_model
 def n_populations(model):
     if model == 'K7b':
         return 7
+    elif model == 'K12b':
+        return 12
+    elif model == 'E11':
+        return 11
+    elif model == 'globe13':
+        return 13
+    elif model == 'globe10':
+        return 10
     else:
         print("Model does not exist!")
         return None

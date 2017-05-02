@@ -29,6 +29,18 @@ def read_model(model):
     if model == 'K7b':
         snp_file_name = 'K7b.alleles'
         frequency_file_name = 'K7b.7.F'
+    elif model == 'K12b':
+        snp_file_name = 'K12b.alleles'
+        frequency_file_name = 'K12b.12.F'
+    elif model == 'E11':
+        snp_file_name = 'E11.alleles'
+        frequency_file_name = 'E11.11.F'
+    elif model == 'globe13':
+        snp_file_name = 'globe13.alleles'
+        frequency_file_name = 'globe13.13.F'
+    elif model == 'globe10':
+        snp_file_name = 'globe10.alleles'
+        frequency_file_name = 'globe10.10.F'
     else:
         print("Model does not exist!")
 
