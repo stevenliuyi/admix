@@ -1,22 +1,7 @@
 import numpy as np
 import scipy.optimize as optimize
 from raw_data_processing import read_raw_data, read_model
-
-# return the number of populations in the model
-def n_populations(model):
-    if model == 'K7b':
-        return 7
-    elif model == 'K12b':
-        return 12
-    elif model == 'E11':
-        return 11
-    elif model == 'globe13':
-        return 13
-    elif model == 'globe10':
-        return 10
-    else:
-        print("Model does not exist!")
-        return None
+import admix_models
 
 # genotype matches
 def genotype_matches(genome_data, snp, major_alleles, minor_alleles):
@@ -44,11 +29,11 @@ def admix_fraction(model, raw_data_format, raw_data_file=None):
     snp, minor_alleles, major_alleles, frequency = read_model(model)
     g_major, g_minor = genotype_matches(genome_data, snp, major_alleles, minor_alleles)
 
-    # set initial guess for optimization
-    initial_guess = np.ones(n_populations(model)) / n_populations(model)
+    # set uniform initial guess for optimization
+    initial_guess = np.ones(admix_models.n_populations(model)) / admix_models.n_populations(model)
 
     # constraints of admixture fractions
-    bounds = tuple((0,1) for i in range(n_populations(model)))
+    bounds = tuple((0,1) for i in range(admix_models.n_populations(model)))
     constraints = ({'type':'eq', 'fun': lambda af: np.sum(af)-1})
 
     # MLE

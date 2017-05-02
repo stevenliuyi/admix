@@ -1,5 +1,6 @@
 import csv
 import numpy as np
+import admix_models
 
 # convert 23andme raw data
 def twenty_three_and_me(data_file_name):
@@ -26,23 +27,9 @@ def read_raw_data(data_format, data_file_name = None):
 
 # convert alleles information of a model to a dict
 def read_model(model):
-    if model == 'K7b':
-        snp_file_name = 'K7b.alleles'
-        frequency_file_name = 'K7b.7.F'
-    elif model == 'K12b':
-        snp_file_name = 'K12b.alleles'
-        frequency_file_name = 'K12b.12.F'
-    elif model == 'E11':
-        snp_file_name = 'E11.alleles'
-        frequency_file_name = 'E11.11.F'
-    elif model == 'globe13':
-        snp_file_name = 'globe13.alleles'
-        frequency_file_name = 'globe13.13.F'
-    elif model == 'globe10':
-        snp_file_name = 'globe10.alleles'
-        frequency_file_name = 'globe10.10.F'
-    else:
-        print("Model does not exist!")
+    # obtain model file names
+    snp_file_name = admix_models.snp_file_name(model)
+    frequency_file_name = admix_models.frequency_file_name(model)
 
     # read SNPs
     snp = []
