@@ -58,6 +58,42 @@ def populations(model):
                 'East Asian',
                 'Atlantic Baltic',
                 'South Asian']
+    elif model == 'world9':
+        return ['Amerindian',
+                'East Asian',
+                'African',
+                'Atlantic Baltic',
+                'Australasian',
+                'Siberian',
+                'Caucasus Gedrosia',
+                'Southern',
+                'South Asian']
+    elif model == 'Eurasia7':
+        return ['Sub Saharan',
+                'West Asian',
+                'Atlantic Baltic',
+                'East Asian',
+                'Southern',
+                'South Asian',
+                'Siberian']
+    elif model == 'Africa9':
+        return ['Europe',
+                'Northwest Africa',
+                'Southwest Asia',
+                'East Africa',
+                'South Africa',
+                'Mbuti',
+                'West Africa',
+                'Biaka',
+                'San']
+    elif model == 'weac2':
+        return ['Palaeoafrican',
+                'Atlantic Baltic',
+                'Northeast Asian',
+                'Near East',
+                'Sub Saharan',
+                'South Asian',
+                'Southeast Asian']
     else:
         print('Model does not exist!')
         return None

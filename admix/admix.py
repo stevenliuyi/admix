@@ -10,7 +10,7 @@ def admix_results(models, raw_data_format, raw_data_file=None):
             print('{:s}: {:.2f}%'.format(populations[i], 100*frac))
         print('\n')
 
-models = ['K7b', 'K12b', 'E11', 'globe13', 'globe10']
+models = ['K7b', 'K12b', 'E11', 'globe13', 'globe10', 'world9', 'Eurasia7', 'Africa9', 'weac2']
 raw_data_format = '23andme'
 
 admix_results(models, raw_data_format)
