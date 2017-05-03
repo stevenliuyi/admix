@@ -1,4 +1,5 @@
 import argparse
+import os
 from admix_fraction import admix_fraction
 import admix_models
 
@@ -6,10 +7,21 @@ def arguments():
     # argument parser
     parser = argparse.ArgumentParser()
     
+    # raw genome data file
+    parser.add_argument('raw_data',
+                        nargs = '?',
+                        default = '',
+                        help = 'file name of the raw genome data')
+
     # specify models
     parser.add_argument('-m', '--models',
                         nargs = '+',
-                        help = 'specify admixure models for calculation (default: all available models)')
+                        help = 'set admixure models for calculation (default: all available models)')
+
+    # specify raw data format
+    parser.add_argument('-v', '--vendor',
+                        default = '23andme',
+                        help = 'set the DNA testing vendor (default: 23andme)')
 
     # save as a file (set the default file name when no argument provided)
     parser.add_argument('-f', '--file',
@@ -55,22 +67,32 @@ def admix_results(models, output_filename, zh, raw_data_format, raw_data_file=No
         print('Results are written to ' + output_filename)
         f.close()
 
-# arguments
-args = arguments()
-
-# set models for calculation
-all_models = admix_models.models()
-if (args.models is None):
-    print('No model specified, all available models will be used.\n')
-    models = all_models
-else:
-    models = args.models
-    for m in models:
-        if not m in all_models:
-            print('Cannot find model ' + m + '!')
-            exit()
-    print('Models: ' + ','.join(models) + '\n')
-
-raw_data_format = '23andme'
-
-admix_results(models, args.file, args.zh, raw_data_format)
+if __name__ == '__main__':
+    # get arguments
+    args = arguments()
+    
+    # set models for calculation
+    all_models = admix_models.models()
+    if (args.models is None):
+        print('No model specified, all available models will be used.\n')
+        models = all_models
+    else:
+        models = args.models
+        for m in models:
+            if not m in all_models:
+                print('Cannot find model ' + m + '!')
+                exit()
+    print('\nAdmixture calculation models: ' + ','.join(models) + '\n')
+    
+    # raw data not set
+    if args.raw_data == '':
+        args.raw_data = os.path.join(os.path.dirname(__file__), '../data/demo_genome_23andme.txt')
+        print('Raw data file not set, a demo 23andme data will be used.')
+        # demo only provided for 23andme
+        if args.vendor != '23andme':
+            args.vendor = '23andme'
+            print('Ignore the vendor argument (' + args.vendor + ') since demo only provided for 23andme.')
+    
+    # beginning of calculation
+    print('Calcuation is started...\n')
+    admix_results(models, args.file, args.zh, args.vendor, args.raw_data)

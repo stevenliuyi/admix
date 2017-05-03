@@ -23,7 +23,8 @@ def read_raw_data(data_format, data_file_name = None):
             return twenty_three_and_me("../data/demo_genome_23andme.txt")
     else:
         print("Data format does not exist!")
-        return {}
+        exit()
+        return None
 
 # convert alleles information of a model to a dict
 def read_model(model):
