@@ -87,11 +87,11 @@ if __name__ == '__main__':
     # raw data not set
     if args.raw_data == '':
         args.raw_data = os.path.join(os.path.dirname(__file__), '../data/demo_genome_23andme.txt')
-        print('Raw data file not set, a demo 23andme data will be used.')
+        print('Raw data file not set, a demo 23andme data will be used.\n')
         # demo only provided for 23andme
         if args.vendor != '23andme':
             args.vendor = '23andme'
-            print('Ignore the vendor argument (' + args.vendor + ') since demo only provided for 23andme.')
+            print('Ignore the vendor argument (' + args.vendor + ') since demo only provided for 23andme.\n')
     
     # beginning of calculation
     print('Calcuation is started...\n')
