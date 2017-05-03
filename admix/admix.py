@@ -8,7 +8,7 @@ def arguments():
     parser = argparse.ArgumentParser()
     
     # raw genome data file
-    parser.add_argument('raw_data',
+    parser.add_argument('-f', '--file',
                         nargs = '?',
                         default = '',
                         help = 'file name of the raw genome data')
@@ -24,7 +24,7 @@ def arguments():
                         help = 'set the DNA testing vendor (default: 23andme)')
 
     # save as a file (set the default file name when no argument provided)
-    parser.add_argument('-f', '--file',
+    parser.add_argument('-o', '--output',
                         nargs = '?',
                         const = 'admixture_results.txt',
                         help = 'save results as a file')
@@ -85,8 +85,8 @@ if __name__ == '__main__':
     print('\nAdmixture calculation models: ' + ','.join(models) + '\n')
     
     # raw data not set
-    if args.raw_data == '':
-        args.raw_data = os.path.join(os.path.dirname(__file__), '../data/demo_genome_23andme.txt')
+    if args.file == '':
+        args.file = os.path.join(os.path.dirname(__file__), '../data/demo_genome_23andme.txt')
         print('Raw data file not set, a demo 23andme data will be used.\n')
         # demo only provided for 23andme
         if args.vendor != '23andme':
@@ -95,4 +95,4 @@ if __name__ == '__main__':
     
     # beginning of calculation
     print('Calcuation is started...\n')
-    admix_results(models, args.file, args.zh, args.vendor, args.raw_data)
+    admix_results(models, args.output, args.zh, args.vendor, args.file)
