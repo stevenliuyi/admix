@@ -57,7 +57,7 @@ Admix supports many publicly available admixture models. All the calculator file
 | `AncientNearEast13` | Ancient Near East K13 | [Link](http://www.anthrogenica.com/showthread.php?8193-ancient-DNA-in-the-Gedrosia-Near-East-Neolithic-K13) |
 | `K7AMI` | Eurogenes K7 AMI | [Link](http://www.anthrogenica.com/showthread.php?4548-Upcoming-DIY-Eurogenes-K7-amp-K8-Calculator-amp-Oracles-for-tracking-E-Asian-amp-ASI) |
 | `K8AMI` | Eurogenes K8 AMI | [Link](http://www.anthrogenica.com/showthread.php?4548-Upcoming-DIY-Eurogenes-K7-amp-K8-Calculator-amp-Oracles-for-tracking-E-Asian-amp-ASI) |
-| MDLPK27 | MDLP K27 | [Link](http://www.anthrogenica.com/showthread.php?4557-Post-MDLP-K27-Results) |
+| `MDLPK27` | MDLP K27 | [Link](http://www.anthrogenica.com/showthread.php?4557-Post-MDLP-K27-Results) |
 | `puntDNAL` | puntDNAL K12 Ancient World | [Link](http://www.anthrogenica.com/showthread.php?8034-PuntDNAL-K12-Ancient-World-Results) |
 
 ### Implementation
@@ -67,4 +67,4 @@ Let *F<sub>nk</sub>* be the minor allele frequency of SNP marker *n* for popluat
 
 ![](http://latex.codecogs.com/gif.latex?\\chi_{\\{l^{minor}_n\\}}(G_{ni})j_i\\log(F_{nk}q_k)+\\chi_{\\{l^{major}_n\\}}(G_{ni})j_i\\log((J_{nk}-F_{nk})q_k),) 
 
-where *χ* is the indicator function, *J*/*j* are the all-ones matrix/vector. Note that the Einstein summation convention is implied here. With the constraints 0 ≤ *q<sub>k</sub>* ≤ 1 and Σ *q<sub>k</sub>* = 1, we can obtain the admixture proportions *q<sub>k</sub>* by applying optimization techniques.
+where *χ* is the indicator function, *J* and *j* are the all-ones matrix/vector. Note that the Einstein summation convention is implied here. With the constraints 0 ≤ *q<sub>k</sub>* ≤ 1 and Σ *q<sub>k</sub>* = 1, we can obtain the admixture proportions *q<sub>k</sub>* by applying optimization techniques.
