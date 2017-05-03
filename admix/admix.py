@@ -30,7 +30,7 @@ def arguments():
                         help = 'save results as a file')
 
     # population description in Chinese
-    parser.add_argument('-z', '--zh',
+    parser.add_argument('-z', '--zhongwen',
                         action = 'store_true',
                         help = 'display population names in Chinese')
 
