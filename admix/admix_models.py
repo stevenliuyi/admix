@@ -12,7 +12,14 @@ def models():
             'K36',
             'EUtest13',
             'Jtest14',
-            'HarappaWorld']
+            'HarappaWorld',
+            'TurkicK11',
+            'KurdishK10',
+            'AncientNearEast13',
+            'K7AMI',
+            'K8AMI',
+            'MDLPK27',
+            'puntDNAL']
 
 # population names for all models
 def populations(model):
@@ -193,6 +200,101 @@ def populations(model):
                 ('East-African','东非'),
                 ('Pygmy','俾格米人'),
                 ('West-African','西非')]
+    elif model == 'TurkicK11':
+        return [('Southeast European','东南欧'),
+                ('West Asian','西亚'),
+                ('Southeast Asian','东南亚'),
+                ('Sub-Saharan African','撒哈拉以南非洲'),
+                ('Northeast European','东北欧'),
+                ('Indian','印度'),
+                ('Northwest European','西北欧'),
+                ('Turkic','突厥'),
+                ('Mongol','蒙古'),
+                ('Papuan','巴布亚'),
+                ('Northeast Asian','东北亚')]
+    elif model == 'KurdishK10':
+        return [('Kurdish','库尔德人'),
+                ('Southeast-European','东南欧'),
+                ('Norhteast-European','东北欧'),
+                ('Indian','印度'),
+                ('East-Asian','东亚'),
+                ('Northwest-European','西北欧'),
+                ('Siberian','西伯利亚'),
+                ('Sardinian','撒丁'),
+                ('Southwest-Asian','西南亚'),
+                ('Sub-Saharan','撒哈拉以南非洲')]
+    elif model == 'AncientNearEast13':
+        return [('Southeast Asian','东南亚'),
+                ('Anatolia Neolithic','新石器时代安纳托利亚'),
+                ('CHG-EEF','高加索狩猎采集者－早期欧洲农人'),
+                ('Polar','极地'),
+                ('EHG','欧洲狩猎采集者'),
+                ('Sub-Saharan','撒哈拉以南非洲'),
+                ('Iran-Neolithic','新石器时代伊朗'),
+                ('Karitiana','卡利吉亚纳'),
+                ('Ancestral-Indian','原始印度人'),
+                ('Natufian','纳吐夫'),
+                ('Siberian','西伯利亚'),
+                ('Papuan','巴布亚'),
+                ('SHG-WHG','斯堪的纳维亚－西欧狩猎采集者')]
+    elif model == 'K7AMI':
+        return [('Sub-Saharan','撒哈拉以南非洲'),
+                ('Oceanian','大洋洲'),
+                ('Amerindian','美洲印第安人'),
+                ('Euro Hunter-Gatherer','欧洲狩猎采集者'),
+                ('Siberian','西伯利亚'),
+                ('Southeast Asian','东南亚'),
+                ('Near Eastern','近东')]
+    elif model == 'K8AMI':
+        return [('Amerindian','美洲印第安人'),
+                ('Siberian','西伯利亚'),
+                ('Euro Hunter-Gatherer','欧洲狩猎采集者'),
+                ('Oceanian','大洋洲'),
+                ('Sub-Saharan','撒哈拉以南非洲'),
+                ('Southeast Asian','东南亚'),
+                ('Linearbandkeramik','线纹陶文化'),
+                ('South-Central Asian','中南亚')]
+    elif model == 'MDLPK27':
+        return [('Nilotic-Omotic','尼罗－奥摩'),
+                ('Ancestral-South-Indian','原始南印度人'),
+                ('North-European-Baltic','北欧－波罗的海'),
+                ('Uralic','乌拉尔'),
+                ('Australo-Melanesian','澳美'),
+                ('East-Siberean','东西伯利亚'),
+                ('Ancestral-Yayoi','原始弥生人'),
+                ('Caucasian-Near-Eastern','高尔索－近东'),
+                ('Tibeto-Burman','藏缅'),
+                ('Austronesian','南岛'),
+                ('Central-African-Pygmean','中非俾格米人'),
+                ('Central-African-Hunter-Catherers','中非狩猎采集者'),
+                ('Nilo-Sahrian','尼罗－撒哈拉'),
+                ('North-African','北非'),
+                ('Gedrosia-Caucasian','格德罗西亚－高加索'),
+                ('Cushitic','库施特'),
+                ('Congo-Pygmean','刚果俾格米人'),
+                ('Bushmen','布须曼人'),
+                ('South-Meso-Amerindian','中南美洲印第安人'),
+                ('South-West-European','西南欧'),
+                ('North-Amerindian','北美洲印第安人'),
+                ('Arabic','阿拉伯'),
+                ('North-Circumpolar','北极圈'),
+                ('Kalash','卡拉什人'),
+                ('Papuan-Australian','巴布亚－澳大利亚'),
+                ('Baltic-Finnic','波罗的海－芬兰'),
+                ('Bantu','班图人')]
+    elif model == 'puntDNAL':
+        return [('EHG-Steppe','欧洲狩猎采集者－大草原'),
+                ('Oceanian','大洋洲'),
+                ('East Eurasian','东欧亚'),
+                ('Iran Neolithic','新石器时代伊朗'),
+                ('Siberian','西伯利亚'),
+                ('Sub-Saharan','撒哈拉以南非洲'),
+                ('African HG','非洲狩猎采集者'),
+                ('South Eurasian','南欧亚'),
+                ('Western HG','西方狩猎采集者'),
+                ('Natufian HG','纳吐夫狩猎采集者'),
+                ('Amerinidian','美洲印第安人'),
+                ('Anatolian Neolithic','新石器时代安纳托利亚')]
     else:
         print('Model does not exist!')
         return None
