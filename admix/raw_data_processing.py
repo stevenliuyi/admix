@@ -3,8 +3,15 @@ import numpy as np
 import os
 import admix_models
 
+# check if file exits
+def check_file(file_name):
+    if not os.path.isfile(file_name):
+        print('Cannot find the file \'' + file_name + '\'!\n')
+        exit()
+
 # convert 23andme raw data
 def twenty_three_and_me(data_file_name):
+    check_file(data_file_name)
     processed_data = {}
     with open(data_file_name, 'r') as data:
         data = csv.reader(data, delimiter='\t')
@@ -15,6 +22,20 @@ def twenty_three_and_me(data_file_name):
 
     return processed_data
 
+# convert AncestryDNA raw data
+def ancestry(data_file_name):
+    check_file(data_file_name)
+    processed_data = {}
+    with open(data_file_name, 'r') as data:
+        data = csv.reader(data, delimiter='\t')
+        for row in data:
+            # make sure the genotype is valid
+            if len(row) == 5 and row[-1] in ['A','T','G','C']:
+                # combine alleles into genotype
+                processed_data[row[0]] = ''.join(row[-2:])
+
+    return processed_data
+
 # convert the raw genome uata to a dict
 def read_raw_data(data_format, data_file_name = None):
     if data_format == "23andme":
@@ -22,6 +43,13 @@ def read_raw_data(data_format, data_file_name = None):
             return twenty_three_and_me(data_file_name)
         else:
             return twenty_three_and_me(os.path.join(os.path.dirname(__file__), "../data/demo_genome_23andme.txt"))
+    elif data_format == 'ancestry':
+        if not data_file_name is None:
+            return ancestry(data_file_name)
+        else:
+            print("Data file not set!")
+            exit()
+            return None
     else:
         print("Data format does not exist!")
         exit()

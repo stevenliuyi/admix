@@ -74,7 +74,7 @@ if __name__ == '__main__':
     # set models for calculation
     all_models = admix_models.models()
     if (args.models is None):
-        print('No model specified, all available models will be used.\n')
+        print('\nNo model specified, all available models will be used.\n')
         models = all_models
     else:
         models = args.models
