@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/stevenliuyi/admix.svg?branch=master)](https://travis-ci.org/stevenliuyi/admix)
 [![PyPI version](https://badge.fury.io/py/admix.svg)](https://badge.fury.io/py/admix)
 
-Admix is a simple tool to calculate ancestry composition (admixture proportions) from SNP raw data provided by different DNA testing vendors (such as [23andme](https://www.23andme.com/) and [AncestryDNA](https://www.ancestry.com/dna/)).
+Admix is a simple tool to calculate ancestry composition (admixture proportions) from SNP raw data provided by various DNA testing vendors (such as [23andme](https://www.23andme.com/) and [AncestryDNA](https://www.ancestry.com/dna/)).
 
 ### Installation
 #### Install from Github
@@ -20,7 +20,7 @@ pip install admix
 Note that due to the size limit, the package on PyPI only contains five models (`K7b`, `K12b`, `globe13`, `world9` and `E11`). If you want all models, you could download them or just install Admix from this repository as shown above.
 
 ### Usage
-Support that you've already had your 23andme raw data downloaded and placed in the current directory with the name `my_raw_data.txt`. Then you can perform admixture calculation by specifying the calculation model (`K7b` in this example):
+Suppose that you've already had your 23andme raw data downloaded and placed in the current directory with the name `my_raw_data.txt`. Then you can perform admixture calculation by specifying the calculation model (`K7b` in this example):
 
 ```
 admix -f my_raw_data.txt -v 23andme -m K7b
@@ -124,9 +124,9 @@ Admix supports many publicly available admixture models. All the calculator file
 | `puntDNAL` | puntDNAL K12 Ancient World | [Link](http://www.anthrogenica.com/showthread.php?8034-PuntDNAL-K12-Ancient-World-Results) |
 
 ### Implementation
-Maximum likelihood estimation (MLE) algorithm is applied for ancestry composition calcuation, and the implementation is fairly straightforward.
+Maximum likelihood estimation (MLE) algorithm is applied for ancestry composition calculation, and the implementation is fairly straightforward.
 
-Let *F<sub>nk</sub>* be the minor allele frequency of SNP marker *n* for popluation *k*, *l<sup>minor</sup><sub>n</sub>* and *l<sup>major</sup><sub>n</sub>* be the minor and major allele for marker *n* respectively, and *G<sub>ni</sub>* be the allele at marker *n* of the individual we're interested in (*i*=1,2). Our goal is to find the admixutre fraction *q<sub>k</sub>* of the individual, which maximize the log likelihood function
+Let *F<sub>nk</sub>* be the minor allele frequency of SNP marker *n* for population *k*, *l<sup>minor</sup><sub>n</sub>* and *l<sup>major</sup><sub>n</sub>* be the minor and major allele for marker *n* respectively, and *G<sub>ni</sub>* be the allele at marker *n* of the individual we're interested in (*i*=1,2). Our goal is to find the admixture fraction *q<sub>k</sub>* of the individual, which maximize the log likelihood function
 
 ![](http://latex.codecogs.com/gif.latex?\\chi_{\\{l^{minor}_n\\}}(G_{ni})j_i\\log(F_{nk}q_k)+\\chi_{\\{l^{major}_n\\}}(G_{ni})j_i\\log((J_{nk}-F_{nk})q_k),) 
 
