@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='admix',
 
-    version='0.1.dev0',
+    version='0.1.dev1',
 
     description='An admixture analysis tool that supports raw data from 23andme, AncestryDNA, etc.',
     long_description=open('admix/README.rst','r').read(),
