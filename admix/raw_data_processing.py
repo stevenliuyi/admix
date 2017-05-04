@@ -42,7 +42,7 @@ def read_raw_data(data_format, data_file_name = None):
         if not data_file_name is None:
             return twenty_three_and_me(data_file_name)
         else:
-            return twenty_three_and_me(os.path.join(os.path.dirname(__file__), "../data/demo_genome_23andme.txt"))
+            return twenty_three_and_me(os.path.join(os.path.dirname(__file__), "data/demo_genome_23andme.txt"))
     elif data_format == 'ancestry':
         if not data_file_name is None:
             return ancestry(data_file_name)
@@ -66,7 +66,7 @@ def read_model(model):
     minor_alleles = []
     major_alleles = []
 
-    with open(os.path.join(os.path.dirname(__file__), '../data/' + snp_file_name), 'r') as snp_file:
+    with open(os.path.join(os.path.dirname(__file__), 'data/' + snp_file_name), 'r') as snp_file:
         snp_file = csv.reader(snp_file, delimiter=' ')
         for row in snp_file:
             snp.append(row[0])
@@ -75,7 +75,7 @@ def read_model(model):
 
     # read frequency matrix 
     frequency = []
-    with open(os.path.join(os.path.dirname(__file__), '../data/' + frequency_file_name), 'r') as frequency_file:
+    with open(os.path.join(os.path.dirname(__file__), 'data/' + frequency_file_name), 'r') as frequency_file:
         frequency_file = csv.reader(frequency_file, delimiter=' ')
         for row in frequency_file:
             frequency.append([float(f) for f in row])

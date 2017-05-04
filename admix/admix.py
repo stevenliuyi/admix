@@ -1,5 +1,6 @@
+import sys, os
+sys.path.append(os.path.dirname(__file__))
 import argparse
-import os
 from admix_fraction import admix_fraction
 import admix_models
 
@@ -67,7 +68,7 @@ def admix_results(models, output_filename, zh, raw_data_format, raw_data_file=No
         print('Results are written to ' + output_filename)
         f.close()
 
-if __name__ == '__main__':
+def main():
     # get arguments
     args = arguments()
     
@@ -86,7 +87,7 @@ if __name__ == '__main__':
     
     # raw data not set
     if args.file == '':
-        args.file = os.path.join(os.path.dirname(__file__), '../data/demo_genome_23andme.txt')
+        args.file = os.path.join(os.path.dirname(__file__), 'data/demo_genome_23andme.txt')
         print('Raw data file not set, a demo 23andme data will be used.\n')
         # demo only provided for 23andme
         if args.vendor != '23andme':
@@ -95,4 +96,7 @@ if __name__ == '__main__':
     
     # beginning of calculation
     print('Calcuation is started...\n')
-    admix_results(models, args.output, args.zh, args.vendor, args.file)
+    admix_results(models, args.output, args.zhongwen, args.vendor, args.file)
+
+if __name__ == '__main__':
+    main()
