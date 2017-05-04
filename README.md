@@ -1,5 +1,14 @@
 ## Admix
-Admix is a simple tool to calculate ancestry composition (admixture proportions) from SNP raw data provided by different DNA testing vendors (such as 23andme and AncestryDNA).
+Admix is a simple tool to calculate ancestry composition (admixture proportions) from SNP raw data provided by different DNA testing vendors (such as [23andme](https://www.23andme.com/) and [AncestryDNA](https://www.ancestry.com/dna/)).
+
+### Installation
+#### Install from PyPI
+Install Admix from [PyPI](https://pypi.python.org/pypi/admix):
+```
+pip install admix
+```
+
+Note that due to the size limit, the package on PyPI only contains one model `K7b`.
 
 ### Usage
 Support that you've already had your 23andme raw data downloaded and placed in the current directory with the name `my_raw_data.txt`. Then you can perform admixture calculation by specifying the calculation model (`K7b` in this example):
@@ -18,6 +27,11 @@ If no models are set, the program will apply all the available models:
 admix -f my_raw_data.txt -v 23andme
 ```
 You can choose the raw data format by changing the `-v` or `--vendor` parameter. The value should be one of `23andme` and `ancestry`.
+
+You may also set the `-o` or `--output` parameter to write the ancestry composition results into a file:
+```
+admix -f my_raw_data.txt -v 23andme -o result.txt
+```
 
 If you don't have your raw data yet, you can also test the program by using a demo 23andme data file provided by the program:
 ```

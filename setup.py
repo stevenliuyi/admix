@@ -5,7 +5,7 @@ setup(
 
     version='0.1.dev0',
 
-    description='an admixture analysis tool that supports raw data from 23andme, AncestryDNA, etc.',
+    description='An admixture analysis tool that supports raw data from 23andme, AncestryDNA, etc.',
     long_description=open('admix/README.rst','r').read(),
 
     url='https://github.com/stevenliuyi/admix',
