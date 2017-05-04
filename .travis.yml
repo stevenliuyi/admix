@@ -1,0 +1,19 @@
+language: python
+
+python:
+    - "2.7"
+    - "3.5"
+    - "3.6"
+
+before_install:
+    - pip install --upgrade pip setuptools wheel
+    - pip install --only-binary=numpy,scipy numpy scipy
+
+install: 
+    - pip install .
+
+script:
+    - admix
+
+notifications:
+    email: false
