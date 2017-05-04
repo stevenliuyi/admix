@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# yapf: disable
+
 # all models
 def models():
     return ['K7b',
@@ -302,13 +304,18 @@ def populations(model):
         print('Model does not exist!')
         return None
 
+# yapf: enable
+
+
 # number of populations in all models
 def n_populations(model):
     return len(populations(model))
 
+
 # model alleles file names
 def snp_file_name(model):
     return model + '.alleles'
+
 
 # model frequency matrix file names
 def frequency_file_name(model):
