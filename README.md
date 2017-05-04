@@ -57,6 +57,46 @@ For more help information, you could use:
 admix -h
 ```
 
+### Output Example
+- **English**
+
+Command: `admix -m K12b`
+
+Output:
+```
+Gedrosia: 0.06%
+Siberian: 3.71%
+Northwest African: 0.00%
+Southeast Asian: 33.43%
+Atlantic Med: 0.07%
+North European: 0.00%
+South Asian: 0.00%
+East African: 0.00%
+Southwest Asian: 0.01%
+East Asian: 62.72%
+Caucasus: 0.00%
+Sub Saharan: 0.00%
+```
+- **Chinese**
+
+Command: `admix -m K12b -z`
+
+Output:
+```
+格德罗西亚: 0.06%
+西伯利亚: 3.71%
+西北非: 0.00%
+东南亚: 33.43%
+大西洋地中海: 0.07%
+北欧: 0.00%
+南亚: 0.00%
+东非: 0.00%
+西南亚: 0.01%
+东亚: 62.72%
+高加索: 0.00%
+撒哈拉以南非洲: 0.00%
+```
+
 ### Models
 Admix supports many publicly available admixture models. All the calculator files are properties of their authors, and are not covered by the license of this program. Links are provided which contain more information for each model.
 
