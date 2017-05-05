@@ -4,6 +4,13 @@
 
 Admix is a simple tool to calculate ancestry composition (admixture proportions) from SNP raw data provided by various DNA testing vendors (such as [23andme](https://www.23andme.com/) and [AncestryDNA](https://www.ancestry.com/dna/)).
 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Output Example](#output-example)
+- [Raw Data Format](#raw-data-format)
+- [Models](#models)
+- [Implementation](#implementation)
+
 ### Installation
 #### Install from Github
 You can use `pip` to install Admix directly from this Github repository:
