@@ -106,6 +106,7 @@ Admix supports raw data formats from the following DNA testing vendors with `-v`
 | ancestry | [AncestryDNA](https://www.ancestry.com/dna/) |
 | ftdna | [FamilyTreeDNA Family Finder](https://www.familytreedna.com/products/family-finder) |
 | wegene | [WeGene](https://www.wegene.com/en/) |
+| myheritage | [MyHeritageDNA](https://www.myheritage.com/dna) |
 
 ### Models
 Admix supports many publicly available admixture models. All the calculator files are properties of their authors, and are not covered by the license of this program. Links are provided which contain more information for each model.
