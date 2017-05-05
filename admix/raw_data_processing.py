@@ -40,6 +40,21 @@ def ancestry(data_file_name):
     return processed_data
 
 
+# convert FTDNA raw data
+def ftdna(data_file_name):
+    check_file(data_file_name)
+    processed_data = {}
+    with open(data_file_name, 'r') as data:
+        data = csv.reader(data)
+        for row in data:
+            # skip header line
+            if row[0] == 'RSID': continue
+            # make sure the genotype is valid
+            if len(row) == 4 and row[-1][-1] in ['A', 'T', 'G', 'C']:
+                processed_data[row[0]] = row[-1]
+    return processed_data
+
+
 # convert the raw genome uata to a dict
 def read_raw_data(data_format, data_file_name=None):
     if data_format == "23andme":
