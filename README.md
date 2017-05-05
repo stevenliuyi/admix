@@ -35,7 +35,7 @@ If no models are set, the program will apply all the available models:
 ```
 admix -f my_raw_data.txt -v 23andme
 ```
-You can choose the raw data format by changing the `-v` or `--vendor` parameter. The value should be one of `23andme` and `ancestry`.
+You can choose the raw data format by changing the `-v` or `--vendor` parameter. The values supported are listed [here](#raw-data-format).
 
 You may also set the `-o` or `--output` parameter to write the ancestry composition results into a file:
 ```
@@ -96,6 +96,16 @@ Output:
 高加索: 0.00%
 撒哈拉以南非洲: 0.00%
 ```
+
+### Raw Data Format
+Admix supports raw data formats from the following DNA testing vendors with `-v` or `--vendor` parameter:
+
+| parameter value | vendor |
+| --------------- | ------ |
+| 23andme | [23andme](https://www.23andme.com/) |
+| ancestry | [AncestryDNA](https://www.ancestry.com/dna/) |
+| ftdna | [FamilyTreeDNA Family Finder](https://www.familytreedna.com/products/family-finder) |
+| wegene | [WeGene](https://www.wegene.com/en/) |
 
 ### Models
 Admix supports many publicly available admixture models. All the calculator files are properties of their authors, and are not covered by the license of this program. Links are provided which contain more information for each model.

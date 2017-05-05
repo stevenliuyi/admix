@@ -55,6 +55,12 @@ def ftdna(data_file_name):
     return processed_data
 
 
+# convert WeGene raw data
+# seems that WeGene uses similar data format as 23andme
+def wegene(data_file_name):
+    return twenty_three_and_me(data_file_name)
+
+
 # convert the raw genome uata to a dict
 def read_raw_data(data_format, data_file_name=None):
     if data_format == "23andme":
@@ -67,6 +73,20 @@ def read_raw_data(data_format, data_file_name=None):
     elif data_format == 'ancestry':
         if not data_file_name is None:
             return ancestry(data_file_name)
+        else:
+            print("Data file not set!")
+            exit()
+            return None
+    elif data_format == 'ftdna':
+        if not data_file_name is None:
+            return ftdna(data_file_name)
+        else:
+            print("Data file not set!")
+            exit()
+            return None
+    elif data_format == 'wegene':
+        if not data_file_name is None:
+            return wegene(data_file_name)
         else:
             print("Data file not set!")
             exit()
