@@ -31,7 +31,7 @@ def likelihood(g_major, g_minor, frequency, admixture_fraction):
 
 
 # obtain admixture fraction by applying the maximum likelihood estimation
-def admix_fraction(model, raw_data_format, raw_data_file=None):
+def admix_fraction(model, raw_data_format, raw_data_file=None, tolerance=1e-3):
     genome_data = read_raw_data(raw_data_format, raw_data_file)
     snp, minor_alleles, major_alleles, frequency = read_model(model)
     g_major, g_minor = genotype_matches(genome_data, snp, major_alleles,
@@ -52,6 +52,6 @@ def admix_fraction(model, raw_data_format, raw_data_file=None):
         initial_guess,
         bounds=bounds,
         constraints=constraints,
-        tol=1e-3).x
+        tol=tolerance).x
 
     return admix_frac

@@ -47,6 +47,14 @@ def arguments():
         action='store_true',
         help='display population names in Chinese')
 
+    # tolerance of optimization
+    parser.add_argument(
+        '-t',
+        '--tolerance',
+        nargs='?',
+        default='1e-3',
+        help='set optimization tolerance')
+
     return parser.parse_args()
 
 
@@ -54,15 +62,24 @@ def arguments():
 def admix_results(models,
                   output_filename,
                   zh,
+                  tolerance,
                   raw_data_format,
                   raw_data_file=None):
     # write results to a file
     if (output_filename is not None):
         f = open(output_filename, 'w')
 
+    # convert tolerance to float
+    try:
+        tolerance = float(tolerance)
+    except ValueError:
+        print('Invalid tolerance!')
+        exit()
+
     for model in models:
         result = model + '\n'
-        admix_frac = admix_fraction(model, raw_data_format, raw_data_file)
+        admix_frac = admix_fraction(model, raw_data_format, raw_data_file,
+                                    tolerance)
         populations = admix_models.populations(model)
         for (i, frac) in enumerate(admix_frac):
             population_en, population_zh = populations[i]
@@ -116,7 +133,8 @@ def main():
 
     # beginning of calculation
     print('Calcuation is started...\n')
-    admix_results(models, args.output, args.zhongwen, args.vendor, args.file)
+    admix_results(models, args.output, args.zhongwen, args.tolerance,
+                  args.vendor, args.file)
 
 
 if __name__ == '__main__':
