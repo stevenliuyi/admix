@@ -140,6 +140,13 @@ Admix supports many publicly available admixture models. All the calculator file
 | `K8AMI` | Eurogenes K8 AMI | [Link](http://www.anthrogenica.com/showthread.php?4548-Upcoming-DIY-Eurogenes-K7-amp-K8-Calculator-amp-Oracles-for-tracking-E-Asian-amp-ASI) |
 | `MDLPK27` | MDLP K27 | [Link](http://www.anthrogenica.com/showthread.php?4557-Post-MDLP-K27-Results) |
 | `puntDNAL` | puntDNAL K12 Ancient World | [Link](http://www.anthrogenica.com/showthread.php?8034-PuntDNAL-K12-Ancient-World-Results) |
+| `K47` | LM Genetics K47 | [Link](https://anthrogenica.com/showthread.php?12788-New-K30-K47-World-Calculator) |
+| `K7M1` | Tolan K7M1 | [Link](http://gen3553.pagesperso-orange.fr/ADN/Calc.htm) |
+| `K13M2` | Tolan K13M2 | [Link](http://gen3553.pagesperso-orange.fr/ADN/Calc.htm) |
+| `K14M1` | Tolan K14M1 | [Link](http://gen3553.pagesperso-orange.fr/ADN/Calc.htm) |
+| `K18M4` | Tolan K18M4 | [Link](http://gen3553.pagesperso-orange.fr/ADN/Calc.htm) |
+| `K25R1` | Tolan K25R1 | [Link](http://gen3553.pagesperso-orange.fr/ADN/Calc.htm) |
+| `MichalK25`| Michal World K25 | [Link](https://anthrogenica.com/showthread.php?13359-Michal-s-World-K25-calculator) |
 
 ### Implementation
 Maximum likelihood estimation (MLE) algorithm is applied for ancestry composition calculation, and the implementation is fairly straightforward.
