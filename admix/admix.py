@@ -3,6 +3,7 @@ sys.path.append(os.path.dirname(__file__))
 import argparse
 from admix_fraction import admix_fraction
 import admix_models
+import numpy as np
 
 
 def arguments():
@@ -22,8 +23,8 @@ def arguments():
         '-m',
         '--models',
         nargs='+',
-        help='set admixure models for calculation (default: all available models)'
-    )
+        help=
+        'set admixure models for calculation (default: all available models)')
 
     # specify raw data format
     parser.add_argument(
@@ -55,6 +56,16 @@ def arguments():
         default='1e-3',
         help='set optimization tolerance')
 
+    # sort admixture proportions
+    parser.add_argument(
+        '--sort', action='store_true', help='sort admixture proportions')
+
+    # only display non-zero proportions
+    parser.add_argument(
+        '--ignore-zeros',
+        action='store_true',
+        help='only display non-zero proportions')
+
     return parser.parse_args()
 
 
@@ -63,6 +74,8 @@ def admix_results(models,
                   output_filename,
                   zh,
                   tolerance,
+                  sort,
+                  ignore_zeros,
                   raw_data_format,
                   raw_data_file=None):
     # write results to a file
@@ -78,10 +91,18 @@ def admix_results(models,
 
     for model in models:
         result = model + '\n'
-        admix_frac = admix_fraction(model, raw_data_format, raw_data_file,
-                                    tolerance)
-        populations = admix_models.populations(model)
+        admix_frac = np.array(
+            admix_fraction(model, raw_data_format, raw_data_file, tolerance))
+        populations = np.array(admix_models.populations(model))
+
+        # perform a descending sort of the fractions
+        if sort:
+            idx = np.argsort(admix_frac)[::-1]
+            admix_frac = admix_frac[idx]
+            populations = populations[idx]
+
         for (i, frac) in enumerate(admix_frac):
+            if ignore_zeros and frac < 1e-4: continue
             population_en, population_zh = populations[i]
             if zh == False:  # English
                 population = population_en
@@ -134,7 +155,7 @@ def main():
     # beginning of calculation
     print('Calcuation is started...\n')
     admix_results(models, args.output, args.zhongwen, args.tolerance,
-                  args.vendor, args.file)
+                  args.sort, args.ignore_zeros, args.vendor, args.file)
 
 
 if __name__ == '__main__':

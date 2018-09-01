@@ -59,6 +59,8 @@ Chinese users may turn on the `-z` flag so the population would be displayed in 
 admix -z -m E11
 ```
 
+Besides, you may use `sort` flag to sort the proportions and `--ignore-zeros` flag to display non-zero proportions only.
+
 For more help information, you could use:
 ```
 admix -h

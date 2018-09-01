@@ -130,7 +130,7 @@ def read_model(model):
             minor_alleles.append(row[1])
             major_alleles.append(row[2])
 
-    # read frequency matrix 
+    # read frequency matrix
     frequency = []
     with open(
             os.path.join(

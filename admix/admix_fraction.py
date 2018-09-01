@@ -38,8 +38,8 @@ def admix_fraction(model, raw_data_format, raw_data_file=None, tolerance=1e-3):
                                         minor_alleles)
 
     # set uniform initial guess for optimization
-    initial_guess = np.ones(admix_models.n_populations(
-        model)) / admix_models.n_populations(model)
+    initial_guess = np.ones(
+        admix_models.n_populations(model)) / admix_models.n_populations(model)
 
     # constraints of admixture fractions
     bounds = tuple((0, 1) for i in range(admix_models.n_populations(model)))
