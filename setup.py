@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='admix',
 
-    version='1.0',
+    version='1.1',
 
     description='An admixture analysis tool that supports raw data from 23andme, AncestryDNA, etc.',
     long_description=open('admix/README.rst','r').read(),
@@ -11,7 +11,7 @@ setup(
     url='https://github.com/stevenliuyi/admix',
 
     author='Steven Liu',
-    author_email='stevenliuyi@gmail.com',
+    author_email='me@yliu.io',
 
     license='GNU General Public License v3.0',
 
