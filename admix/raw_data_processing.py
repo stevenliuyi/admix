@@ -49,6 +49,8 @@ def ftdna(data_file_name):
         for row in data:
             # skip header line
             if row[0] == 'RSID': continue
+            # skip comment lines
+            if row[0].startswith('#'): continue
             # make sure the genotype is valid
             if len(row) == 4 and row[-1][-1] in ['A', 'T', 'G', 'C']:
                 processed_data[row[0]] = row[-1]
