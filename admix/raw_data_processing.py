@@ -57,6 +57,22 @@ def ftdna(data_file_name):
     return processed_data
 
 
+# convert new FTDNA raw data
+def ftdna2(data_file_name):
+    check_file(data_file_name)
+    processed_data = {}
+    with open(data_file_name, 'r') as data:
+        data = csv.reader(data)
+        for row in data:
+            # skip comment lines
+            if row[0].startswith("#"): continue
+            # make sure the genotype is valid
+            if len(row) == 5 and row[-1] in ['A', 'T', 'G', 'C']:
+                # combine alleles into genotype
+                processed_data[row[0]] = ''.join(row[-2:])
+    return processed_data
+
+
 # convert WeGene raw data
 # seems that WeGene uses similar data format as 23andme
 def wegene(data_file_name):
@@ -88,6 +104,13 @@ def read_raw_data(data_format, data_file_name=None):
     elif data_format == 'ftdna':
         if not data_file_name is None:
             return ftdna(data_file_name)
+        else:
+            print("Data file not set!")
+            exit()
+            return None
+    elif data_format == 'ftdna2':
+        if not data_file_name is None:
+            return ftdna2(data_file_name)
         else:
             print("Data file not set!")
             exit()

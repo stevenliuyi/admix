@@ -114,6 +114,7 @@ Admix supports raw data formats from the following DNA testing vendors with `-v`
 | 23andme | [23andme](https://www.23andme.com/) |
 | ancestry | [AncestryDNA](https://www.ancestry.com/dna/) |
 | ftdna | [FamilyTreeDNA Family Finder](https://www.familytreedna.com/products/family-finder) |
+| ftdna2 | [FamilyTreeDNA Family Finder](https://www.familytreedna.com/products/family-finder) (new format) |
 | wegene | [WeGene](https://www.wegene.com/en/) |
 | myheritage | [MyHeritageDNA](https://www.myheritage.com/dna) |
 
