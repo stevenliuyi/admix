@@ -108,9 +108,9 @@ Output:
 ```
 
 ### FAQ
-- Question: *Why I got the same estimated proportion for each population?*
+- **Question:** *Why I got the same estimated proportion for each population?*
 
-This package utilizes the optimization function [scipy.optimize.minimize](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html) from the [SciPy](SciP://www.scipy.org) library, which has a parameter `tol` to control the tolerance for termination of the optimizer. The default tolerance is set to `1e-3` here. It works most of time, but sometimes `1e-3` is too big and causes early termination. You can manually set a smaller tolerance (say `1e-4`) to obtain correct results, although it will take longer to run the optimizer. You can do that by using the `-t` or `--tolerance` flag, for example:
+**Answer:** This package utilizes the optimization function [scipy.optimize.minimize](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html) from the [SciPy](https://www.scipy.org) library, which has a parameter `tol` to control the tolerance for termination of the optimizer. The default tolerance is set to `1e-3` here. It works most of time, but sometimes `1e-3` is too big and causes early termination. You can manually set a smaller tolerance (say `1e-4`) to obtain correct results, although it will take longer to run the optimizer. You can do that by using the `-t` or `--tolerance` flag, for example:
 
 ```
 admix -f my_raw_data.txt -t 1e-4
