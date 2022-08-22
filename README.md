@@ -164,8 +164,12 @@ Admix supports many publicly available admixture models. All the calculator file
 ### Implementation
 Maximum likelihood estimation (MLE) algorithm is applied for ancestry composition calculation, and the implementation is fairly straightforward.
 
-Let *F<sub>nk</sub>* be the minor allele frequency of SNP marker *n* for population *k*, *l<sup>minor</sup><sub>n</sub>* and *l<sup>major</sup><sub>n</sub>* be the minor and major allele for marker *n* respectively, and *G<sub>ni</sub>* be the allele at marker *n* of the individual we're interested in (*i*=1,2). Our goal is to find the admixture fraction *q<sub>k</sub>* of the individual, which maximize the log likelihood function
+Let $F_{nk}$ be the minor allele frequency of SNP marker $n$ for population $k$ ,
+$l_n^{minor}$ and $l_n^{major}$ be the minor and major allele for marker $n$ respectively,
+and $G_{ni}$ be the allele at marker $n$ of the individual we're interested in ( $i=1,2$ ).
 
-![](http://latex.codecogs.com/gif.latex?\\chi_{\\{l^{minor}_n\\}}(G_{ni})j_i\\log(F_{nk}q_k)+\\chi_{\\{l^{major}_n\\}}(G_{ni})j_i\\log((J_{nk}-F_{nk})q_k),) 
+Our goal is to find the admixture fraction $q_k$ of the individual, which maximize the log likelihood function
 
-where *χ* is the indicator function, *J* and *j* are the all-ones matrix/vector. Note that the Einstein summation convention is implied here. With the constraints 0 ≤ *q<sub>k</sub>* ≤ 1 and Σ *q<sub>k</sub>* = 1, we can obtain the admixture proportions *q<sub>k</sub>* by applying optimization techniques.
+$$\chi_{{l^{minor}_n}}(G_{ni})j_i\log(F_{nk}q_k)+\chi_{{l^{major}_n}}(G_{ni})j_i\log((J_{nk}-F_{nk})q_k)$$
+
+where $\chi$ is the indicator function, $J$ and $j$ are the all-ones matrix/vector. Note that the Einstein summation convention is implied here. With the constraints $0 \leq q_k \leq 1$ and $\sum {q_k} = 1$, we can obtain the admixture proportions $q_k$ by applying optimization techniques.
