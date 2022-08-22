@@ -4,13 +4,16 @@
 
 Admix is a simple tool to calculate ancestry composition (admixture proportions) from SNP raw data provided by various DNA testing vendors (such as [23andme](https://www.23andme.com/) and [AncestryDNA](https://www.ancestry.com/dna/)).
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Output Example](#output-example)
-- [FAQ](#faq)
-- [Raw Data Format](#raw-data-format)
-- [Models](#models)
-- [Implementation](#implementation)
+- [Admix](#admix)
+  - [Installation](#installation)
+    - [Install from Github](#install-from-github)
+    - [Install from PyPI](#install-from-pypi)
+  - [Usage](#usage)
+  - [Output Example](#output-example)
+  - [FAQ](#faq)
+  - [Raw Data Format](#raw-data-format)
+  - [Models](#models)
+  - [Implementation](#implementation)
 
 ### Installation
 #### Install from Github
@@ -142,6 +145,7 @@ Admix supports many publicly available admixture models. All the calculator file
 | `Africa9` | Dodecad Africa9 | [Link](http://dodecad.blogspot.com/2011/09/africa9-calculator.html) |
 | `weac2` | Dodecad weac (West Eurasian cline) 2 | [Link](http://dodecad.blogspot.com/2012/06/weac2-calculator.html) |
 | `E11` | E11 | [Link](http://www.ranhaer.com/thread-32241-1-1.html) |
+| `K13` | Eurogenes K13 | [Link](https://bga101.blogspot.com/2013/11/updated-eurogenes-k13-at-gedmatch.html) |
 | `K36` | Eurogenes K36 | [Link](http://bga101.blogspot.com/2013/03/eurogenes-k36-at-gedmatch.html) |
 | `EUtest13` | Eurogenes EUtest K13 | [Link](http://bga101.blogspot.com/2013/11/updated-eurogenes-k13-at-gedmatch.html) |
 | `Jtest14` | Eurogenes Jtest K14 | [Link](http://bga101.blogspot.com/2012/09/eurogenes-ashkenazim-ancestry-test-files.html) |
